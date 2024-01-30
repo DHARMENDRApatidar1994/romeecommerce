@@ -1,0 +1,288 @@
+.SignMain {
+    width: 100%;
+    height: 100vh;
+   
+}
+.SignMain .SignIn{
+           width: 100%;
+           height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.SignMain .signflex {
+    width: 100%;
+   height: 100%;
+    display: flex;
+   border-radius: 1vmax;
+ color: white;
+    background-color:black;
+    justify-content: space-between;
+}
+
+.SignMain .signflex .signone {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignMain .signflex .signone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.SignMain .signflex .signtwo {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SignMain .signflex .signtwo h5 {
+    font-size: 2.8vmax;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-top: 6.6vmax;
+}
+
+.SignMain .signflex .signtwo h6 {
+    font-size: 1.4vmax;
+    margin-bottom: 1.5vmax;
+    margin-top: 0.5vmax;
+}
+
+.SignMain .signflex .signtwo h6 span {
+    color: yellow;
+    font-size: 1.4vmax;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.SignMain .signflex .signtwo input {
+    width: 90%;
+    font-size: 1vmax;
+    padding: 0.6vmax;
+    border-radius: 0.5vmax;
+    border: 1px solid rgb(255, 208, 0);
+    margin-top: 1vmax;
+}
+.eyesshow{
+    width: 100%;
+    position: relative;
+    margin-top: 1vmax;
+}
+.eyesshowinput{
+    position: absolute;
+}
+
+.SignMain .signflex .signtwo .eyes {
+    position: absolute;
+    right: 45px;
+    top: 5px;
+    border: none;
+    font-size: 1.4vmax;
+    color: black;
+  
+}
+
+.SignMain .signflex .signtwo p {
+    width: 100%;
+    font-size: 1.2vmax;
+    font-weight: 600;
+    margin-top: 3.8vmax;
+    text-align: start;
+   
+  
+}
+
+.SignMain .signflex .signtwo button {
+    width: 90%;
+    font-size: 1.4vmax;
+    font-weight: 600;
+    padding: 0.6vmax;
+    border-radius: 0.5vmax;
+    background-color: rgba(255, 208, 0, 0.911);
+    border: none;
+
+}
+
+.SignMain .signflex .signtwo h4 {
+    font-size: 1.4vmax;
+    margin-top: 1vmax;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 2.5vmax;
+}
+
+.SignMain .signflex .signtwo .signicon {
+    width: 100%;
+    text-align: center;
+    margin-top: 1vmax;
+    margin-bottom: 9.8vmax;
+    margin-right: 2.5vmax;
+
+
+
+}
+
+.SignMain .signflex .signtwo i {
+    font-size:2.5vmax;
+    padding: 0.5vmax;
+    border-radius: 2vmax;
+    border: 1px solid rgba(255, 208, 0, 0.911);
+    margin-right: 1.5vmax;
+
+
+}
+
+
+@media (max-width:767px) {
+
+   
+    .SignMain .SignIn{
+        width: 90%;
+
+} 
+
+    .SignMain .signflex {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .SignMain .signflex .signone {
+        display: none;
+    }
+
+    .SignMain {
+        width: 100%;
+        height: auto;
+        margin-top: 11.5vmax;
+        transform: translateX(0vmax);
+
+    }
+
+    .SignMain .signflex .signtwo {
+        width: 90%;
+    }
+
+    .SignMain .signflex .signtwo h5 {
+        font-size: 2vmax;
+    }
+
+    .SignMain .signflex .signtwo h6 {
+        font-size: 1.5vmax;
+    }
+
+    .SignMain .signflex .signtwo h6 span {
+        font-size: 1.5vmax;
+    }
+
+    .SignMain .signflex .signtwo input {
+
+        font-size: 1.4vmax;
+
+
+    }
+
+    .SignMain .signflex .signtwo .eyes {
+        font-size: 1.6vmax;
+
+    }
+
+    .SignMain .signflex .signtwo p {
+        font-size: 1.4vmax;
+
+    }
+
+    .SignMain .signflex .signtwo button {
+
+        font-size: 1.5vmax;
+    }
+
+    .SignMain .signflex .signtwo h4 {
+        font-size: 1.6vmax;
+    }
+
+    .SignMain .signflex .signtwo .signicon {
+
+        margin-bottom: 2.8vmax;
+
+
+
+    }
+}
+
+
+@media (min-width:768px) and (max-width:1024px) {
+    .signflex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .signflex .signone {
+        display: none;
+    }
+
+    .sinmain {
+        width: 90%;
+        height: auto;
+        margin-top: 11.5vmax;
+        transform: translateX(3vmax);
+    }
+
+    .signflex .signtwo {
+        width: 90%;
+    }
+
+    .signflex .signtwo h5 {
+        font-size: 2vmax;
+    }
+
+    .signflex .signtwo h6 {
+        font-size: 1.5vmax;
+    }
+
+    .signflex .signtwo h6 span {
+        font-size: 1.5vmax;
+    }
+
+    .signflex .signtwo input {
+
+        font-size: 1.4vmax;
+
+
+    }
+
+    .signflex .signtwo .eyes {
+        font-size: 1.6vmax;
+
+    }
+
+    .signflex .signtwo p {
+        font-size: 1.4vmax;
+
+    }
+
+    .signflex .signtwo button {
+
+        font-size: 1.5vmax;
+    }
+
+    .signflex .signtwo h4 {
+        font-size: 1.6vmax;
+    }
+
+    .signflex .signtwo .signicon {
+
+        margin-bottom: 2.8vmax;
+
+
+
+    }
+}
