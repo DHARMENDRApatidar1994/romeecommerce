@@ -12,40 +12,65 @@ const Login = () => {
     password: "",
   });
 
+  const [validationErrors, setValidationErrors] = useState({});
+
   const handleChange = useCallback(
     (e) => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
+      setValidationErrors({ ...validationErrors, [name]: "" }); // Clear validation error on change
     },
-    [formData]
+    [formData, validationErrors]
   );
+
+  const validateEmail = (email) => {
+    // Basic email validation using regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    return password.trim() !== "";
+  };
 
   const handleLogin = useCallback(
     (e) => {
       e.preventDefault();
+
+      let isValid = true;
+      const errors = {};
+
+      if (!validateEmail(formData.email)) {
+        errors.email = "Invalid email address";
+        isValid = false;
+      }
+
+      if (!validatePassword(formData.password)) {
+        errors.password = "Password is required";
+        isValid = false;
+      }
+
+      if (!isValid) {
+        setValidationErrors(errors);
+        return;
+      }
+
       const storedUserList = JSON.parse(localStorage.getItem("userList")) || [];
       const loginUser = storedUserList.find(
         (user) =>
-          user.username === formData.username &&
-          user.password === formData.password
+          user.email === formData.email && user.password === formData.password
       );
+
       if (!loginUser) {
         toast.error("User not found");
         return;
       }
-      if (
-        loginUser.username === formData.username &&
-        loginUser.password === formData.password
-      ) {
-        localStorage.setItem("user", JSON.stringify(loginUser));
-        navigate("/product");
 
-        toast.success("Login successful");
-      } else {
-        toast.error("Invalid credentials");
-      }
+      localStorage.setItem("user", JSON.stringify(loginUser));
+      navigate("/product");
+      toast.success("Login successful");
     },
-    [formData.password, formData.username, navigate]
+    [formData.email, formData.password, navigate]
   );
 
   return (
@@ -72,6 +97,17 @@ const Login = () => {
               value={formData.email}
               onChange={handleChange}
             />
+            {validationErrors.email && (
+              <p
+                style={{
+                  color: "red",
+                }}
+                className="error-message"
+              >
+                {validationErrors.email}
+              </p>
+            )}
+
             <div className="eyesshow">
               <input
                 className="eyesshowinput mt-2"
@@ -82,26 +118,36 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleChange}
               />
+
               {show ? (
-                <i onClick={() => setShow(false)} class="eyes ri-eye-fill"></i>
+                <i
+                  onClick={() => setShow(false)}
+                  className="eyes ri-eye-fill"
+                ></i>
               ) : (
                 <i
                   onClick={() => setShow(true)}
-                  class="eyes ri-eye-off-fill"
+                  className="eyes ri-eye-off-fill"
                 ></i>
               )}
             </div>
-
+            {validationErrors.password && (
+              <p
+                style={{
+                  color: "red",
+                }}
+                className="error-message"
+              >
+                {validationErrors.password}
+              </p>
+            )}
             <p style={{ cursor: "pointer" }}>Forgot Password?</p>
-            {/* <Link to="/product" className="text-dark">
-              <button>Continue</button>
-            </Link> */}
             <button type="submit">sign in</button>
           </form>
 
           <div className="signicon">
-            <i class="ri-google-fill "></i>
-            <i class="ri-facebook-fill ms-2"></i>
+            <i className="ri-google-fill "></i>
+            <i className="ri-facebook-fill ms-2"></i>
           </div>
         </div>
       </div>
