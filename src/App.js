@@ -20,6 +20,7 @@ const App = () => {
   console.log("kjbkj", isUserLogin);
   return (
     <div>
+      {isUserLogin?.email ? <Navbar /> : ""}
       <Routes>
         {isUser?.email ? (
           <>
