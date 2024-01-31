@@ -11,6 +11,12 @@
     color: white;
     text-decoration: none;
     
+    
+}
+.itemcount{
+  position: absolute;
+ top: 1.5vmax;
+ transform: translateX(-1vmax);
 }
 .mobile-menu-icon{
   display: none;

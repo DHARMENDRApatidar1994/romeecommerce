@@ -58,9 +58,7 @@ const ProductDetail = () => {
               <h6 className='col-2'>:</h6>
               <h6 className='col-7'>{obj.Vocals}</h6>
             </div>
-            <div>
-                <button className='col-11 rounded form-control'>Add To cart</button>
-            </div>
+           
 
           </div>
         </div>

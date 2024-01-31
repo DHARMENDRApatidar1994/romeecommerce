@@ -28,27 +28,28 @@ const Cart = () => {
   };
 
   return (
-    <div className="pt-5">
-      <h3 className="mt-5 pt-5 ms-3">Your cart ({cart?.length} items)</h3>
-      <button
+    <div className="pt-5 pb-5" style={{ background: "linear-gradient(to right, #12394a, #044561)",height:"auto"}}>
+         <button className="mt-5 ms-3 rounded-circle "
         onClick={() => {
           navigate("/product");
         }}
       >
-        Back
+       <i class="ri-arrow-left-circle-fill fs-2 px-1"></i>
       </button>
+      <h3 className="mt-3 ms-3 text-light">Your cart ({cart?.length} items)</h3>
+     
       <div>
-        <div className="col-10 d-flex justify-content-evenly align-items-center ms-3 mt-5 bg-secondary p-3 text-light">
+        <div className="col-lg-10 col-12 d-flex justify-content-evenly align-items-center ms-lg-3 ms-0 mt-5 bg-secondary p-3 text-light">
           <h6 className="col-4">Item</h6>
           <h6 className="col-2">Price</h6>
           <h6 className="col-2">Total</h6>
         </div>
         {cart?.map((item) => {
           return (
-            <div className="d-flex justify-content-evenly align-items-center ms-3 shadow mt-2 col-10">
+            <div className="d-flex justify-content-evenly align-items-center ms-3 shadow mt-2 col-lg-10 col-12 text-light">
               <div className="col-4  d-flex align-items-center">
-                <img className="col-2" src={item?.img} alt="" />
-                <h3 className="col-6">{item.name}</h3>
+                <img className="col-2 d-lg-flex d-none" src={item?.img} alt="" />
+                <h3 className="col-lg-6 col-12 fs-5 ms-lg-3 ms-0">{item.name}</h3>
               </div>
               <h4 className="col-2">${item?.price}</h4>
               <h4 className="col-2">
@@ -62,7 +63,7 @@ const Cart = () => {
           );
         })}
 
-        <div className="col-9 d-flex justify-content-end align-items-end flex-column mt-5 ">
+        <div className="col-9 d-flex justify-content-end align-items-end flex-column mt-5 text-light ">
           <div className="d-flex justify-content-between col-4 ">
             <h6 className="col-4">Subtotal</h6>
             <h6 className="col-2">:</h6>

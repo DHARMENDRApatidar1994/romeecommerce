@@ -68,6 +68,7 @@ const Login = () => {
               type="email"
               placeholder="Email"
               name="email"
+              required
               value={formData.email}
               onChange={handleChange}
             />
@@ -77,6 +78,7 @@ const Login = () => {
                 type={show ? "text" : "password"}
                 placeholder="Password"
                 name="password"
+                required
                 value={formData.password}
                 onChange={handleChange}
               />
