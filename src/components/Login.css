@@ -92,7 +92,7 @@
     width: 100%;
     font-size: 1.2vmax;
     font-weight: 600;
-    margin-top: 3.8vmax;
+    margin-top: 4.8vmax;
     text-align: start;
    
   
@@ -123,9 +123,6 @@
     margin-top: 1vmax;
     margin-bottom: 9.8vmax;
     margin-right: 2.5vmax;
-
-
-
 }
 
 .SignMain .signflex .signtwo i {
@@ -134,17 +131,12 @@
     border-radius: 2vmax;
     border: 1px solid rgba(255, 208, 0, 0.911);
     margin-right: 1.5vmax;
-
-
 }
 
 
 @media (max-width:767px) {
-
-   
     .SignMain .SignIn{
         width: 90%;
-
 } 
 
     .SignMain .signflex {

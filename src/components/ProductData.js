@@ -10,7 +10,6 @@ export const purple = [
       drumbs:"Johan Malik",
       Vocals:"Paul Hanri",
       images:[
-        
         "http://demos.codexcoder.com/anthem/wp-content/uploads/2017/05/Music_Album_02.jpg",
         "http://demos.codexcoder.com/anthem/wp-content/uploads/2017/05/Music_Album_02.jpg",
         "http://demos.codexcoder.com/anthem/wp-content/uploads/2017/05/Music_Album_02.jpg",
