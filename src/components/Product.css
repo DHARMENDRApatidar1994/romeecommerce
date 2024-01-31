@@ -1,0 +1,120 @@
+.purple{
+    width: 100%;
+    height: 45vmax;
+    /* background-color: #7739ff; */
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.imagecontainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+.purple .detail{
+    width: 17%;
+
+   
+   
+}
+.detail .images{
+    width: 100%;
+    height: 19vmax;
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+ /* z-index: 999; */
+ overflow: hidden;
+ cursor: pointer;
+}
+.detail .images:hover{
+    background-color: rgb(169,36,39,0.7);
+}
+.purple .detail img{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    transition: 0.5s;
+    
+}
+.detail .images:hover > img{
+    transform: scale(1.2);
+}
+.detailpageicon{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+
+}
+.purple .detail i{
+width: 50%;
+font-size: 2vmax;
+font-weight: 700;
+background-color: white;
+color: black;
+border-radius: 50%;
+padding: 0.5vmax 1vmax;
+
+/* margin-top: -4vmax; */
+}
+.viewmore{
+    color: white;
+    font-size: 1.5vmax;
+    background-color: black;
+    border-radius: 2vmax;
+    padding: 0.2vmax 0.5vmax;
+    opacity: 0;
+   
+}
+.detailpageicon:hover> .viewmore{
+opacity: 1;
+}
+.detail .images:hover > .detailpageicon{
+    opacity: 1;
+}
+.detail .desc{
+    background-color: white;
+    color: black;
+    font-size: 1vmax;
+    
+}
+.desc h4{
+    font-size: 1.5vmax;
+}
+
+
+.purple h1{
+    color: white;
+    font-size: 4vmax;
+}
+.buynow{
+    width: 80%;
+    font-size: 1vmax;
+    font-weight: 800;
+    padding: 0.6vmax;
+    border-radius: 0.5vmax;
+    background-color:green;
+    border: none;
+    margin-bottom: 0.5vmax;
+}
+.buynow2{
+    width: 80%;
+    font-size: 1vmax;
+    font-weight: 800;
+    padding: 0.6vmax;
+    border-radius: 0.5vmax;
+    background-color: yellow;
+    border: none;
+    margin-bottom: 0.5vmax;
+}

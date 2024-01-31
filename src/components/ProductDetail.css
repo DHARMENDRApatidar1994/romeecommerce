@@ -1,0 +1,123 @@
+.detailpage{
+    width: 100%;
+   
+    /* background-color: rgba(39,174,96,0.88); */
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    padding-top: 10vmax;
+  
+  
+    font-family: 'Courier New', Courier, monospace;
+}
+.albumdetail{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.albumdetail1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.5vmax;
+}
+.albumdetail1 h6{
+    font-size: 1.5vmax;
+}
+.albumtext2{
+    width: 60%;
+    /* background-color: red; */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid white;
+    /* margin-top: 4vmax; */
+}
+.smallImageBox{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+   
+    margin-top: 2vmax;
+}
+.smallImageBox .smallImage{
+    width: 10vmax;
+    height: 10vmax;
+  
+
+}
+
+
+@media (max-width:600px) {
+    .detailpage{
+        height: auto;
+    }
+    .detailpage h1{
+        margin-top: 10vmax;
+    }
+    .albumdetail{
+        width: 90%;
+        flex-direction: column;
+       
+    }
+    .albumdetail1{
+        width: 100%;
+        font-size: 2.2vmax;
+        margin-top: 2vmax;
+    }
+    .albumdetail1 h6{
+        font-size: 2vmax;
+    }
+    .albumtext2{
+        width: 90%;
+        margin-top: 2vmax;
+    }
+    .albumtext2 h5{
+        font-size: 2vmax;
+        margin-top: 2vmax;
+    }
+    .albumtext2 p{
+        font-size: 2vmax;
+    }
+}
+
+
+
+@media (min-width:600px) and (max-width:830px) {
+    .detailpage{
+        height: auto;
+    }
+    .detailpage h1{
+        margin-top: 10vmax;
+        font-size: 5vmax;
+    }
+    .albumdetail{
+        width: 90%;
+        flex-direction: column;
+       
+    }
+    .albumdetail1{
+        width: 100%;
+        font-size: 3vmax;
+        margin-top: 4vmax;
+    }
+    .albumdetail1 h6{
+        font-size: 2.5vmax;
+    }
+    .albumtext2{
+        width: 90%;
+        margin-top: 2vmax;
+    }
+    .albumtext2 h5{
+        font-size: 2vmax;
+        margin-top: 2vmax;
+    }
+    .albumtext2 p{
+        font-size: 2.2vmax;
+    }
+}
