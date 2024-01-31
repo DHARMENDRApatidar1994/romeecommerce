@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import shop from "../assets/images/shop.avif";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [show, setShow] = useState(false);
@@ -40,6 +41,7 @@ const SignUp = () => {
         number: "",
       });
       navigate("/product");
+      toast.success("Login successful");
       console.log("user", formData);
     },
     [formData, navigate, userList]

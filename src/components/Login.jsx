@@ -37,9 +37,10 @@ const Login = () => {
         loginUser.username === formData.username &&
         loginUser.password === formData.password
       ) {
-        toast.success("Login successful");
         localStorage.setItem("user", JSON.stringify(loginUser));
         navigate("/product");
+
+        toast.success("Login successful");
       } else {
         toast.error("Invalid credentials");
       }
