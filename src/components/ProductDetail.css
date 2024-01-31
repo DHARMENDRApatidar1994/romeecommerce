@@ -2,7 +2,8 @@
     width: 100%;
    
     /* background-color: rgba(39,174,96,0.88); */
-    background-color: black;
+    /* background-color: black; */
+    background: linear-gradient(to right, #12394a, #044561);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
