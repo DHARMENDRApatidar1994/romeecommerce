@@ -15,12 +15,32 @@ const SignUp = () => {
     number: "",
   });
 
+  const [validationErrors, setValidationErrors] = useState({});
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 8;
+  };
+
+  const validateNumber = (number) => {
+    return /^\d{10}$/.test(number);
+  };
+
+  const validateName = (name) => {
+    return name.trim() !== "";
+  };
+
   const handleChange = useCallback(
     (e) => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
+      setValidationErrors({ ...validationErrors, [name]: "" }); // Clear validation error on change
     },
-    [formData]
+    [formData, validationErrors]
   );
 
   const userList = useMemo(() => {
@@ -31,6 +51,35 @@ const SignUp = () => {
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
+
+      let isValid = true;
+      const errors = {};
+
+      if (!validateName(formData.name)) {
+        errors.name = "Name is required";
+        isValid = false;
+      }
+
+      if (!validateEmail(formData.email)) {
+        errors.email = "Invalid email address";
+        isValid = false;
+      }
+
+      if (!validateNumber(formData.number)) {
+        errors.number = "Invalid phone number";
+        isValid = false;
+      }
+
+      if (!validatePassword(formData.password)) {
+        errors.password = "Password must be at least 8 characters";
+        isValid = false;
+      }
+
+      if (!isValid) {
+        setValidationErrors(errors);
+        return;
+      }
+
       localStorage.setItem("user", JSON.stringify(formData));
       const updatedUserList = [...userList, formData];
       localStorage.setItem("userList", JSON.stringify(updatedUserList));
@@ -44,8 +93,17 @@ const SignUp = () => {
       toast.success("Login successful");
       console.log("user", formData);
     },
-    [formData, navigate, userList]
+    [
+      formData,
+      navigate,
+      userList,
+      validateEmail,
+      validatePassword,
+      validateNumber,
+      validateName,
+    ]
   );
+
   return (
     <div className="sinmain2">
       <div className="signflex2">
@@ -58,7 +116,7 @@ const SignUp = () => {
               Welcome to E-commerce. <br /> Sign up to enjoy shopping
             </h5>
             <h6>
-              Already resistered?{" "}
+              Already registered?{" "}
               <span onClick={() => navigate("/")}> Sign in</span>
             </h6>
             <input
@@ -68,6 +126,16 @@ const SignUp = () => {
               value={formData.name}
               onChange={handleChange}
             />
+            {validationErrors.name && (
+              <p
+                style={{
+                  color: "red",
+                }}
+                className="error-message"
+              >
+                {validationErrors.name}
+              </p>
+            )}
 
             <input
               className=""
@@ -77,6 +145,16 @@ const SignUp = () => {
               value={formData.email}
               onChange={handleChange}
             />
+            {validationErrors.email && (
+              <p
+                style={{
+                  color: "red",
+                }}
+                className="error-message"
+              >
+                {validationErrors.email}
+              </p>
+            )}
 
             <input
               className="border border-warning mt-2"
@@ -86,6 +164,17 @@ const SignUp = () => {
               value={formData.number}
               onChange={handleChange}
             />
+            {validationErrors.number && (
+              <p
+                style={{
+                  color: "red",
+                }}
+                className="error-message"
+              >
+                {validationErrors.number}
+              </p>
+            )}
+
             <input
               className="mt-2"
               name="password"
@@ -94,26 +183,42 @@ const SignUp = () => {
               value={formData.password}
               onChange={handleChange}
             />
+            {validationErrors.password && (
+              <p
+                style={{
+                  color: "red",
+                }}
+                className="error-message"
+              >
+                {validationErrors.password}
+              </p>
+            )}
             {show ? (
-              <i onClick={() => setShow(false)} class="eyes ri-eye-fill"></i>
+              <i
+                onClick={() => setShow(false)}
+                className="eyes ri-eye-fill"
+              ></i>
             ) : (
-              <i onClick={() => setShow(true)} class="eyes ri-eye-off-fill"></i>
+              <i
+                onClick={() => setShow(true)}
+                className="eyes ri-eye-off-fill"
+              ></i>
             )}
             <p>
               Password must be at least 8 characters with 1 uppercase letter and
-              1 special charactor
+              1 special character
             </p>
             <button type="submit">Sign Up</button>
           </form>
           <h3>
-            By signing up. you accept our <span>Terms of Use</span> and{" "}
+            By signing up, you accept our <span>Terms of Use</span> and{" "}
             <span>Privacy Policy</span>
           </h3>
 
           <h4>or continue with</h4>
           <div className="signicon2">
-            <i class="ri-google-fill "></i>
-            <i class="ri-facebook-fill ms-5"></i>
+            <i className="ri-google-fill "></i>
+            <i className="ri-facebook-fill ms-5"></i>
           </div>
         </div>
       </div>
