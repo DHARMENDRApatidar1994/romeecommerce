@@ -10,7 +10,8 @@ const Navbar = () => {
     <div>
       <div className='nav d-flex justify-content-between align-items-center w-100'>
         <div className='left d-flex w-25  ms-5 mt-2'>
-          <img src="http://demos.codexcoder.com/anthem/wp-content/uploads/2017/05/Anthem-Logo.png" alt="" />
+          {/* <img src="http://demos.codexcoder.com/anthem/wp-content/uploads/2017/05/Anthem-Logo.png" alt="" /> */}
+          <h3 className='text-light'>E-COMMERCE</h3>
 
         </div>
         <div className={isMobile ? "nav-links-mobile" :  "right d-flex justify-content-evenly col-3" }  

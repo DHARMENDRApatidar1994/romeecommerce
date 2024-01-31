@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
     const [add,setAdd] = useState(1)
+    const navigate = useNavigate()
   return (
-    <div className='pt-5'>
-        <h3 className='mt-5 pt-5 ms-3'>Your cart (4 items)</h3>
+    <div className='pt-5 pb-3 text-light' style={{  background: "linear-gradient(to right, #12394a, #044561)"}}>
+         <i class="ri-arrow-left-circle-fill fs-3 mt-5  bg-success" onClick={()=>navigate("/product")}><span className='ms-2'>Back To Product</span></i>
+        <h3 className=' ms-3'>Your cart (4 items)</h3>
         <div>
             <div className='col-10 d-flex justify-content-evenly align-items-center ms-3 mt-5 bg-secondary p-3 text-light'>
                 <h6 className='col-4'>Item</h6>
